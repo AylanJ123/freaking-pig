@@ -30,6 +30,10 @@ namespace freakingpig
             settings.SetActive(false);
         }
 
+        public void OpenCredits(){
+            
+        }
+
         public void Exit(){
             Application.Quit(1);
         }
