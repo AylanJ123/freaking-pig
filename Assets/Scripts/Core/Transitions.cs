@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace t3ampo.mixit
+namespace freakingpig
 {
     public class Transitions : MonoBehaviour
     {
@@ -24,7 +24,7 @@ namespace t3ampo.mixit
         {
             Instance = this;
             rend = GetComponentInChildren<SpriteRenderer>();
-            gameObject.DontDestroyOnLoad();
+            DontDestroyOnLoad(gameObject);
         }
 
         /// <summary>

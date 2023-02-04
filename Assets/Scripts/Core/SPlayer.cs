@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using MyBox;
+using freakingpig.holders;
 
-namespace t3ampo.mixit
+namespace freakingpig
 {
     public class SPlayer : MonoBehaviour
     {
+
+        [SerializeField, AutoProperty(AutoPropertyMode.Asset)]
+        private SoundHolder sHolder;
 
         /// <summary> <inheritdoc cref="GameManager.Instance"/> </summary>
         public static SPlayer Instance { get; private set; }
@@ -25,9 +30,10 @@ namespace t3ampo.mixit
         void Awake()
         {
             Instance = this;
+            SoundHolder.Instance = sHolder;
             musicScr = GetComponent<AudioSource>();
             sfxScr = transform.GetChild(0).GetComponent<AudioSource>();
-            gameObject.DontDestroyOnLoad();
+            DontDestroyOnLoad(gameObject);
         }
 
         /// <summary>

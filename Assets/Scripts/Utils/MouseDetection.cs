@@ -1,27 +1,24 @@
 using MyBox;
+using freakingpig;
 using System.Collections;
 using System.Collections.Generic;
-using t3ampo.mixit.holders;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using freakingpig.holders;
 
-namespace t3ampo.mixit.utils
+namespace freakingpig.utils
 {
     public class MouseDetection : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler
     {
 
-        /// <summary> <inheritdoc cref="GameManager.sHolder"/> </summary>
-        [SerializeField, AutoProperty(AutoPropertyMode.Asset)]
-        private SoundsHolder sHolder;
-
         public void OnPointerEnter(PointerEventData e)
         {
-            SPlayer.PlaySFX(sHolder.mouseHover, .1f);
+            SPlayer.PlaySFX(SoundHolder.Instance.mouseHover, .1f);
         }
 
         public void OnPointerDown(PointerEventData e)
         {
-            SPlayer.PlaySFX(sHolder.mouseClick, .225f);
+            SPlayer.PlaySFX(SoundHolder.Instance.mouseClick, .225f);
         }
 
     }

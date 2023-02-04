@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementController : MonoBehaviour
+namespace freakingpig.controllers
 {
-    public Rigidbody2D rb;
-
-    // Start is called before the first frame update
-    void Start()
+    public class MovementController : MonoBehaviour
     {
-        
-    }
+        public Rigidbody2D rb;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Start is called before the first frame update
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }
