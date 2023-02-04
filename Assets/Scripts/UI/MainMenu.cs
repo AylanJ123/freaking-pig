@@ -10,6 +10,7 @@ namespace freakingpig
     {
         public GameObject mainMenu;
         public GameObject settings;
+        public GameObject credits;
         public void Play()
         {
             Transitions.Transition(.5f, 0, () =>
@@ -22,16 +23,20 @@ namespace freakingpig
 
         public void OpenSettings(){
             mainMenu.SetActive(false);
+            credits.SetActive(false);
             settings.SetActive(true);
         }
 
-        public void CloseSettings(){
+        public void ReturnMainMenu(){
             mainMenu.SetActive(true);
             settings.SetActive(false);
+            credits.SetActive(false);
         }
 
         public void OpenCredits(){
-            
+            settings.SetActive(false);
+            mainMenu.SetActive(false);
+            credits.SetActive(true);
         }
 
         public void Exit(){
