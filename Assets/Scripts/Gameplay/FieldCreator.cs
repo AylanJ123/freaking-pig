@@ -1,4 +1,5 @@
 using MyBox;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,6 +34,7 @@ namespace freakingpig.gameplay
             rend.size = new Vector2(sizeX, sizeY);
         }
 
+        [Serializable]
         public class PlantGeneration
         {
             public float chances;
