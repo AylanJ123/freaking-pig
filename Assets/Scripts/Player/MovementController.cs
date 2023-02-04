@@ -23,7 +23,7 @@ namespace freakingpig.controllers
 
         private void FixedUpdate()
         {
-            rb.velocity = velocity * speed;
+            rb.velocity = velocity * (velocity.x != 0 && velocity.y != 0 ? speed * .75f : speed);
             if (!rotate) return;
             Vector3 diff = (transform.position + (Vector3) velocity - transform.position);
             diff.Normalize();
