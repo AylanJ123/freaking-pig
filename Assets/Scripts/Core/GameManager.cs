@@ -31,7 +31,7 @@ namespace freakingpig
             yield return new WaitForSeconds(2f);
             Transitions.Transition(.5f, 0, () =>
             {
-                SceneManager.LoadScene("Game1", LoadSceneMode.Single);
+                SceneManager.LoadScene(1, LoadSceneMode.Single);
                 SPlayer.SwitchTrack(SoundHolder.Instance.gameStart, .4f, .25f);
             }
             );
