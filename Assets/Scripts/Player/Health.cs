@@ -1,3 +1,4 @@
+using MyBox;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,13 @@ namespace freakingpig
 {
     public class Health : MonoBehaviour
     {
-        public int health = 10;
-        public int maxHealth = 10;
+        [SerializeField, InitializationField] private int maxHealth = 10;
+        [SerializeField, ReadOnly] private int health;
+
+        private void Start()
+        {
+            health = maxHealth;
+        }
 
         public void TakeDamage(int damage)
         {
