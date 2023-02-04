@@ -1,4 +1,5 @@
 using freakingpig.holders;
+using MyBox;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,16 @@ namespace freakingpig
 {
     public class GameManager : MonoBehaviour
     {
+
+        [SerializeField, AutoProperty(AutoPropertyMode.Asset)]
+        private SpriteHolder spHolder;
+
         public static GameManager Instance { get; private set; }
 
         private void Awake()
         {
             Instance = this;
+            SpriteHolder.Instance = spHolder;
             DontDestroyOnLoad(gameObject);
             Transitions.Transition(.25f);
             SPlayer.PlaySFX(SoundHolder.Instance.introSound, .55f);

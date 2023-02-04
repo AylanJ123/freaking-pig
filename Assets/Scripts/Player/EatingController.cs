@@ -2,67 +2,99 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using freakingpig.gameplay;
-using System.Windows.Threading;
+using System;
 
 namespace freakingpig
 {
     public class EatingController : MonoBehaviour
     {
         public Collider2D col;
-        [SerializeField] private bool buffStatus;
-        [SerializeField] private string buffType;
+        private readonly Dictionary<PlantType, Buff> buffs = new(7);
 
-        // Update is called once per frame
+        private void Start()
+        {
+            foreach (PlantType type in Enum.GetValues(typeof(PlantType))) buffs.Add(type, new Buff());
+        }
+
         void Update()
         {
+            foreach (KeyValuePair<PlantType, Buff> pair in buffs)
+                if (pair.Value.active && pair.Value.wornOffTime < Time.time)
+                {
+                    pair.Value.active = false;
+                    WearBuffOff(pair.Key);
+                }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //Layer 3 is plants
-                ContactFilter2D cf = new ContactFilter2D();
+                ContactFilter2D cf = new();
                 cf.useLayerMask = true;
                 cf.useTriggers = true;
                 cf.layerMask = 1 << 3;
-
                 Collider2D[] cols = new Collider2D[1];
                 col.OverlapCollider(cf, cols);
-                PlantType root = 0; //change
-                
-                if (cols.Length >= 1)
-                {
-                    Eat(root);
-                }
+                if (cols.Length >= 1) Eat(cols[0].GetComponent<Plant>().Eat());
             }
         }
 
         void Eat(PlantType root)
         {
-            ActivateBuff();
-            DelayAction(3000);
-            DeactivateBuff();
+            float time = WearBuffOn(root);
+            if (time == 0) return;
+            buffs[root].wornOffTime = time + Time.time;
+            buffs[root].active = true;
         }
 
-
-        void ActivateBuff()
+        private float WearBuffOn(PlantType type)
         {
-            buffStatus = true;
-
-        }
-        void DeactivateBuff()
-        {
-            buffStatus = false;
-        }
-
-        public static void DelayAction(int millisecond)
-        {
-            var timer = new DispatcherTimer();
-            timer.Tick += delegate
+            switch (type)
             {
-                
-                timer.Stop();
-            };
-
-            timer.Interval = System.TimeSpan.FromMilliseconds(millisecond);
-            timer.Start();
+                case PlantType.Potato:
+                    return 0;
+                case PlantType.Carrot:
+                    return 5;
+                case PlantType.Beet:
+                    return 8;
+                case PlantType.Onion:
+                    return 3;
+                case PlantType.Garlic:
+                    return 4;
+                case PlantType.Radish:
+                    return 0;
+                case PlantType.Ginger:
+                    return 4;
+                default:
+                    throw new IndexOutOfRangeException("There are not enough enums in this switch");
+            }
         }
+
+        private void WearBuffOff(PlantType type)
+        {
+            switch (type)
+            {
+                case PlantType.Potato:
+                    break;
+                case PlantType.Carrot:
+                    break;
+                case PlantType.Beet:
+                    break;
+                case PlantType.Onion:
+                    break;
+                case PlantType.Garlic:
+                    break;
+                case PlantType.Radish:
+                    break;
+                case PlantType.Ginger:
+                    break;
+                default:
+                    throw new IndexOutOfRangeException("There are not enough enums in this switch");
+            }
+        }
+
+        private class Buff
+        {
+            public float wornOffTime;
+            public bool active;
+        }
+
     }
 }

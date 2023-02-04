@@ -16,11 +16,16 @@ namespace freakingpig
         private int currentWaypoint;
         private Vector2 velocity;
         private bool reachedEnd;
-
+        private float lockDownEnd;
         void Start()
         {
             marta = GameObject.FindGameObjectWithTag("Player").transform;
             InvokeRepeating("LookForPath", 0, .25f);
+        }
+
+        public void LockDown(float time)
+        {
+            lockDownEnd = Time.time + time;
         }
 
         public void LookForPath()
@@ -38,7 +43,7 @@ namespace freakingpig
 
         private void Update()
         {
-            if (path == null) return;
+            if (path == null || lockDownEnd > Time.time) return;
             velocity = path.vectorPath[currentWaypoint >= path.vectorPath.Count ? path.vectorPath.Count - 1 : currentWaypoint] - transform.position;
             if (velocity.magnitude <= .1f) currentWaypoint = Mathf.Clamp(currentWaypoint + 1, 0, path.vectorPath.Count);
             reachedEnd = currentWaypoint >= path.vectorPath.Count;
@@ -47,8 +52,8 @@ namespace freakingpig
 
         private void FixedUpdate()
         {
-            rb.velocity = reachedEnd ? Vector2.zero : velocity * speed;
-            if (reachedEnd)
+            rb.velocity = reachedEnd || lockDownEnd > Time.time ? Vector2.zero : velocity * speed;
+            if (reachedEnd || lockDownEnd > Time.time)
             {
                 LookForPath();
                 return;
