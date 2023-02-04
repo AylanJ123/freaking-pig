@@ -8,11 +8,9 @@ namespace freakingpig.controllers
     public class MovementController : MonoBehaviour
     {
 
-        public Rigidbody2D rb;
-
-        [SerializeField, InitializationField]
-        private float speed = 10;
-
+        [SerializeField, InitializationField] private float speed = 10;
+        [SerializeField, AutoProperty] private Rigidbody2D rb;
+        [SerializeField, AutoProperty] private Animator animator;
         private Vector2 velocity = new(0, 1);
         private bool rotate;
 
@@ -20,6 +18,7 @@ namespace freakingpig.controllers
         {
             velocity = new(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             rotate = velocity != Vector2.zero;
+            animator.SetBool("running", rotate);
         }
 
         private void FixedUpdate()
