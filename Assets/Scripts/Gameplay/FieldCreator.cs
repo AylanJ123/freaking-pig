@@ -34,6 +34,19 @@ namespace freakingpig.gameplay
                             plant.SetPlant(plantRandom.GetNext());
                             plant.transform.position = anchor + new Vector3(i - .5f, j - .5f, 0);
                         }
+
+            BoxCollider2D child1 = transform.GetChild(0).GetComponent<BoxCollider2D>();
+            child1.transform.localPosition = new(0, sizeY / 2 + 1, 0);
+            child1.size = new(sizeX, 1);
+            BoxCollider2D child2 = transform.GetChild(1).GetComponent<BoxCollider2D>();
+            child2.transform.localPosition = new(sizeX / 2 + .5f, 0, 0);
+            child2.size = new(1, sizeY);
+            BoxCollider2D child3 = transform.GetChild(2).GetComponent<BoxCollider2D>();
+            child3.transform.localPosition = new(0, -(sizeY / 2) - 1, 0);
+            child3.size = new(sizeX, 1);
+            BoxCollider2D child4 = transform.GetChild(3).GetComponent<BoxCollider2D>();
+            child4.transform.localPosition = new(-(sizeX / 2) - .5f, 0, 0);
+            child4.size = new(1, sizeY);
         }
 
 #if UNITY_EDITOR
