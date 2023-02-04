@@ -26,5 +26,6 @@ namespace freakingpig.holders
         public AudioClip mouseClick;
         public AudioClip introSound;
         public AudioClip gameStart;
+        public AudioClip mainMenuMusic;
     }
 }
