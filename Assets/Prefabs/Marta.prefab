@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 3471628768890001250}
   - component: {fileID: 3471628768890001254}
   - component: {fileID: 2334129576624537914}
+  - component: {fileID: 1582932303}
   m_Layer: 7
   m_Name: Marta
   m_TagString: Player
@@ -233,3 +234,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   col: {fileID: 2021877092692938531}
+--- !u!114 &1582932303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3471628768890001251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a4e2da6aeebbf48b0e904e5a210101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  health: 0
+  HealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
