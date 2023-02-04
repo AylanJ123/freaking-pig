@@ -13,6 +13,8 @@ namespace freakingpig.controllers
         private float speed = 10;
         [SerializeField]
         private Vector2 velocity = new Vector2();
+        [SerializeField]
+        private float angle;
 
         // Start is called before the first frame update
         // Update is called once per frame
@@ -24,10 +26,15 @@ namespace freakingpig.controllers
             }
             else
             {
-                velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * 2;
+                if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+                {
+                    velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+                    
+                    angle = Mathf.Atan2(Input.GetAxis("Horizontal") * -1, Input.GetAxis("Vertical")) * Mathf.Rad2Deg;
+                    rb.SetRotation(angle);
+                    rb.velocity = velocity * speed;
+                }
             }
-
-            rb.velocity = velocity * speed;
         }
     }
 
