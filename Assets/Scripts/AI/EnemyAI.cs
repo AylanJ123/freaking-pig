@@ -10,6 +10,7 @@ namespace freakingpig
     {
         [SerializeField, AutoProperty] private Seeker seeker;
         [SerializeField, AutoProperty] private Rigidbody2D rb;
+        [SerializeField, AutoProperty] private AudioSource src;
         [SerializeField, InitializationField] float speed;
         [SerializeField, InitializationField] float searchArea;
         private Transform marta;
@@ -60,12 +61,14 @@ namespace freakingpig
         private void FixedUpdate()
         {
             rb.velocity = reachedEnd || lockDownEnd > Time.time ? Vector2.zero : velocity * speed;
+            src.volume = rb.velocity == Vector2.zero ? 0 : .4f;
+            Vector3 diff = velocity;
             if (reachedEnd || lockDownEnd > Time.time)
             {
                 LookForPath();
-                return;
+                if ((marta.position - transform.position).magnitude > .5f) return;
+                diff = marta.position - transform.position;
             }
-            Vector3 diff = (transform.position + (Vector3) velocity - transform.position);
             diff.Normalize();
             float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new(0, 0, Mathf.LerpAngle(transform.eulerAngles.z, rotZ - 90, .2f));
