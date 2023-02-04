@@ -32,7 +32,9 @@ namespace freakingpig
                 cf.layerMask = 1 << 3;
                 Collider2D[] cols = new Collider2D[1];
                 col.OverlapCollider(cf, cols);
-                if (cols.Length >= 1) Eat(cols[0].GetComponent<Plant>().Eat());
+                if (cols[0] != null)
+                    if (cols[0].TryGetComponent(out Plant plant))
+                        Eat(plant.Eat());
             }
         }
 
