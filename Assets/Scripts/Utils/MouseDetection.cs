@@ -18,7 +18,7 @@ namespace freakingpig.utils
 
         public void OnPointerDown(PointerEventData e)
         {
-            SPlayer.PlaySFX(SoundHolder.Instance.mouseClick, .225f);
+            SPlayer.PlaySFX(SoundHolder.Instance.mouseClick, 1f);
         }
 
     }
