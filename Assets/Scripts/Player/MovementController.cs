@@ -28,12 +28,6 @@ namespace freakingpig.controllers
             Vector3 diff = (transform.position + (Vector3) velocity - transform.position);
             diff.Normalize();
             float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-            //Vector3 rotation = new(0, 0, rotZ - 90);
-            //Debug.Log(rotation);
-            //if (rotation.z == -90) rotation.z = 269.9f;
-            //else if (rotation.z < 0) rotation = -rotation;
-            //Debug.Log(rotation);
-            //transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, rotation, .1f);
             transform.eulerAngles = new(0, 0, Mathf.LerpAngle(transform.eulerAngles.z, rotZ - 90, .2f));
         }
 
