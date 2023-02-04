@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 using MyBox;
 using freakingpig.holders;
+using System;
 
 namespace freakingpig
 {
@@ -13,6 +14,11 @@ namespace freakingpig
 
         [SerializeField, AutoProperty(AutoPropertyMode.Asset)]
         private SoundHolder sHolder;
+
+        internal static void PlaySFX(object introSound, float v)
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary> <inheritdoc cref="GameManager.Instance"/> </summary>
         public static SPlayer Instance { get; private set; }

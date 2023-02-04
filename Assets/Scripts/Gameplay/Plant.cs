@@ -3,10 +3,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static freakingpig.pooling.PoolingManager;
 
 namespace freakingpig.gameplay
 {
-    public class Plant : MonoBehaviour
+    public class Plant : PoolableComponent
     {
 
         [SerializeField, ReadOnly] private PlantType plantType;

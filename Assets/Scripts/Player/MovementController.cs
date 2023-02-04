@@ -1,3 +1,4 @@
+using MyBox;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,26 +10,28 @@ namespace freakingpig.controllers
 
         public Rigidbody2D rb;
 
-        [SerializeField]
+        [SerializeField, InitializationField]
         private float speed = 10;
-        [SerializeField]
-        private Vector2 velocity = new Vector2();
 
-        // Start is called before the first frame update
-        // Update is called once per frame
-        void Update()
+        private Vector2 velocity = new(0, 1);
+        private bool rotate;
+
+        private void Update()
         {
-            if (!Input.anyKey)
-            {
-                velocity = Vector2.zero;
-            }
-            else
-            {
-                velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * 2;
-            }
-
-            rb.velocity = velocity * speed;
+            velocity = new(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            rotate = velocity != Vector2.zero;
         }
+
+        private void FixedUpdate()
+        {
+            rb.velocity = velocity * speed;
+            if (!rotate) return;
+            Vector3 diff = (transform.position + (Vector3) velocity - transform.position);
+            diff.Normalize();
+            float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            transform.eulerAngles = new Vector3(0, 0, rotZ - 90);
+        }
+
     }
 
 }

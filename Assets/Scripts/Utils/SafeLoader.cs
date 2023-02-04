@@ -10,11 +10,11 @@ namespace freakingpig.utils
         void Awake()
         {
 #if UNITY_EDITOR
-            DontDestroyOnLoad(gameObject);
             if (!GameManager.Instance)
             {
+                DontDestroyOnLoad(gameObject);
                 string old = SceneManager.GetActiveScene().name;
-                SceneManager.LoadScene("MXT-Intro");
+                SceneManager.LoadScene(0);
                 StartCoroutine(WaitUntilScene(old));
             }
 #else
