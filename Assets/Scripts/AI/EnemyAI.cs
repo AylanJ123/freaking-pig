@@ -11,6 +11,7 @@ namespace freakingpig
         [SerializeField, AutoProperty] private Seeker seeker;
         [SerializeField, AutoProperty] private Rigidbody2D rb;
         [SerializeField, InitializationField] float speed;
+        [SerializeField, InitializationField] float searchArea;
         private Transform marta;
         private Path path;
         private int currentWaypoint;
@@ -20,7 +21,7 @@ namespace freakingpig
         void Start()
         {
             marta = GameObject.FindGameObjectWithTag("Player").transform;
-            InvokeRepeating("LookForPath", 0, .25f);
+            InvokeRepeating(nameof(LookForPath), 0, .25f);
         }
 
         public void LockDown(float time)
@@ -30,7 +31,13 @@ namespace freakingpig
 
         public void LookForPath()
         {
-            if (seeker.IsDone()) seeker.StartPath(transform.position, marta.position, PathFound);
+            if (seeker.IsDone())
+            {
+                if ((marta.position - transform.position).magnitude < searchArea)
+                    seeker.StartPath(transform.position, marta.position, PathFound);
+                else if (reachedEnd)
+                    seeker.StartPath(transform.position, transform.position + new Vector3(Random.Range(-8, 8), Random.Range(-8, 8), 0), PathFound);
+            }
         }
 
         private void PathFound(Path p)
