@@ -855,6 +855,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayableArea
       objectReference: {fileID: 0}
+    - target: {fileID: 5025982918405675441, guid: 505b04fc64179e8428f999d5cd050f27, type: 3}
+      propertyPath: m_TagString
+      value: PlayableArea
+      objectReference: {fileID: 0}
     - target: {fileID: 5025982918405675444, guid: 505b04fc64179e8428f999d5cd050f27, type: 3}
       propertyPath: m_RootOrder
       value: 2

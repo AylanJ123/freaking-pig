@@ -13,6 +13,10 @@ namespace freakingpig.gameplay
 
         [SerializeField, AutoProperty] private SpriteRenderer rend;
         [SerializeField, ReadOnly] private PlantType plantType;
+        private Transform playableArea;
+
+
+
         public void SetPlant(PlantType type)
         {
             plantType = type;
@@ -36,6 +40,11 @@ namespace freakingpig.gameplay
 
         public PlantType Eat()
         {
+            GameObject obj = new();
+            obj.transform.position = transform.position;
+            obj.transform.parent = GameObject.FindGameObjectWithTag("PlayableArea").transform;
+            AstarPath.active.Scan();
+            PoolItself();
             return plantType;
         }
 
