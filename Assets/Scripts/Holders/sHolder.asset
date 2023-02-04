@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987363082081f4142a81f648f463dd5c, type: 3}
   m_Name: sHolder
   m_EditorClassIdentifier: 
-  mouseHover: {fileID: 0}
-  mouseClick: {fileID: 0}
+  mouseHover: {fileID: 8300000, guid: 918c0f7ed8532c647928c6ab9a0cd579, type: 3}
+  mouseClick: {fileID: 8300000, guid: cef5a5ffe8bdf9f42aabb2354be78455, type: 3}
+  introSound: {fileID: 0}
+  gameStart: {fileID: 0}
+  mainMenuMusic: {fileID: 8300000, guid: e1002a57dfe1dd64c8d36f9a4aaa9b38, type: 3}

@@ -1,3 +1,4 @@
+using freakingpig.holders;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,12 @@ namespace freakingpig
         public GameObject settings;
         public void Play()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Transitions.Transition(.5f, 0, () =>
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+                SPlayer.SwitchTrack(SoundHolder.Instance.gameStart, .3f, .2f);
+            }
+            );
         }
 
         public void OpenSettings(){

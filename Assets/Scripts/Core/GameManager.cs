@@ -32,7 +32,7 @@ namespace freakingpig
             Transitions.Transition(.5f, 0, () =>
             {
                 SceneManager.LoadScene(1, LoadSceneMode.Single);
-                SPlayer.SwitchTrack(SoundHolder.Instance.gameStart, .4f, .25f);
+                SPlayer.SwitchTrack(SoundHolder.Instance.mainMenuMusic, .3f, .2f);
             }
             );
         }
