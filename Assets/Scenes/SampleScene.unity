@@ -350,6 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 634452333}
   - component: {fileID: 634452334}
+  - component: {fileID: 634452335}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -364,7 +365,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634452332}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -432,6 +433,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &634452335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634452332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97e191719f9c18448b6c0bf7cf273f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 634452334}
 --- !u!1 &927667241
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +917,40 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2071079720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3471628768890001251, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
+  m_PrefabInstance: {fileID: 3471628769022385921}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2071079727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071079720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a4e2da6aeebbf48b0e904e5a210101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  health: 0
+  HealthChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 634452335}
+        m_TargetAssemblyTypeName: freakingpig.HealthBar, Assembly-CSharp
+        m_MethodName: ChangeValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2142774787 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3276526088241443731, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
