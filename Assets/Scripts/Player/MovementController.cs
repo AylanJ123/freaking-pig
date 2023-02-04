@@ -11,10 +11,11 @@ namespace freakingpig.controllers
         [SerializeField, InitializationField] private float speed = 10;
         [SerializeField, AutoProperty] private Rigidbody2D rb;
         [SerializeField, AutoProperty] private Animator animator;
-        [SerializeField] private float stamina = 100;
+        [SerializeField] private float stamina = 50;
 
-        private readonly float staminaPerFrame = 1;
-        private readonly float maxStamina = 100;
+        private readonly float staminaIncPerFrame = 35;
+        private readonly float staminaDecPerFrame = 20;
+        private readonly float maxStamina = 50;
         private readonly float staminaRegenDelayTime = 3;
         private float staminaRegenTimer = 0;
 
@@ -50,14 +51,14 @@ namespace freakingpig.controllers
 
         void Run()
         {
-            stamina = Mathf.Clamp(stamina - (staminaPerFrame * Time.deltaTime), 0.0f, maxStamina);
+            stamina = Mathf.Clamp(stamina - (staminaDecPerFrame * Time.deltaTime), 0.0f, maxStamina);
             staminaRegenTimer = 0;
         }
 
         void RegenStamina()
         {
             if (staminaRegenTimer >= staminaRegenDelayTime)
-                stamina = Mathf.Clamp(stamina + (staminaPerFrame * Time.deltaTime), 0.0f, maxStamina);
+                stamina = Mathf.Clamp(stamina + (staminaIncPerFrame * Time.deltaTime), 0.0f, maxStamina);
             else
                 staminaRegenTimer += Time.deltaTime;
         }
