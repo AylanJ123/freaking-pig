@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987363082081f4142a81f648f463dd5c, type: 3}
   m_Name: sHolder
   m_EditorClassIdentifier: 
-  mouseHover: {fileID: 8300000, guid: 918c0f7ed8532c647928c6ab9a0cd579, type: 3}
+  mouseHover: {fileID: 8300000, guid: 772201343d8fa0943a17c0e7fd4d81f1, type: 3}
   mouseClick: {fileID: 8300000, guid: cef5a5ffe8bdf9f42aabb2354be78455, type: 3}
   introSound: {fileID: 0}
   gameStart: {fileID: 0}
