@@ -13,12 +13,12 @@ namespace freakingpig.utils
 
         public void OnPointerEnter(PointerEventData e)
         {
-            SPlayer.PlaySFX(SoundHolder.Instance.mouseHover, .1f);
+            SPlayer.PlaySFX(SoundHolder.Instance.mouseHover, 2.5f);
         }
 
         public void OnPointerDown(PointerEventData e)
         {
-            SPlayer.PlaySFX(SoundHolder.Instance.mouseClick, 1f);
+            SPlayer.PlaySFX(SoundHolder.Instance.mouseClick, 5f);
         }
 
     }
