@@ -17,11 +17,12 @@ namespace freakingpig.gameplay
         [SerializeField, InitializationField] private int columns;
         [SerializeField, InitializationField] private List<PlantGeneration> generation;
         private Pool plantsPooler;
+        public int FieldCount { get; private set; }
 
         private void Start()
         {
             if (!Application.isPlaying) return;
-            PlantRandomManager plantRandom = new(generation, (sizeX - sizeX % rows) * (sizeY - sizeY % columns));
+            PlantRandomManager plantRandom = new(generation, FieldCount = (sizeX - sizeX % rows) * (sizeY - sizeY % columns));
             plantsPooler = PoolingManager.Instance["Plants"];
             Vector3 anchor = transform.position - new Vector3(sizeX / 2f, sizeY / 2f, 0);
             for (int i = 1; i <= sizeX; i++)
