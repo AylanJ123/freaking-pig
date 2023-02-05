@@ -25,7 +25,6 @@ namespace freakingpig
         {
             marta = GameObject.FindGameObjectWithTag("Player").transform;
             InvokeRepeating(nameof(LookForPath), 0, .25f);
-
             animator = GetComponent<Animator>();
         }
 
@@ -40,7 +39,7 @@ namespace freakingpig
             {
                 if ((marta.position - transform.position).magnitude < searchArea)
                     seeker.StartPath(transform.position, marta.position, PathFound);
-                else if (reachedEnd)
+                else if (reachedEnd || path == null)
                     seeker.StartPath(transform.position, transform.position + new Vector3(Random.Range(-8, 8), Random.Range(-8, 8), 0), PathFound);
             }
         }
@@ -70,7 +69,8 @@ namespace freakingpig
             if (reachedEnd || lockDownEnd > Time.time)
             {
                 LookForPath();
-                if ((marta.position - transform.position).magnitude > .5f) return;
+                if ((marta.position - transform.position).magnitude > 1) return;
+                Debug.Log("Looking at Marta");
                 diff = marta.position - transform.position;
             }
             diff.Normalize();
