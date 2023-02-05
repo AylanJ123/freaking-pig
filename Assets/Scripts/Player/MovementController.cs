@@ -22,7 +22,7 @@ namespace freakingpig.controllers
         private Vector2 velocity = new(0, 1);
         private bool rotate;
         private bool isRunning;
-        public GameObject runParticle;
+        public ParticleSystem runParticle;
 
 
         private void Update()
@@ -30,7 +30,13 @@ namespace freakingpig.controllers
             velocity = new(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             rotate = velocity != Vector2.zero;
             animator.SetBool("running", rotate);
+            if (rotate)
+            {
+                runParticle.Play();
+            }
+
             isRunning = Input.GetKey(KeyCode.LeftShift) && stamina > 0;
+
             if (isRunning)
             {
                 Run();
@@ -45,7 +51,7 @@ namespace freakingpig.controllers
         {
             rb.velocity = velocity * (velocity.x != 0 && velocity.y != 0 ? speed * .75f : speed) * (isRunning ? 1.5f : 1);
             if (!rotate) return;
-            Vector3 diff = (transform.position + (Vector3) velocity - transform.position);
+            Vector3 diff = (transform.position + (Vector3)velocity - transform.position);
             diff.Normalize();
             float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new(0, 0, Mathf.LerpAngle(transform.eulerAngles.z, rotZ - 90, .2f));
@@ -55,7 +61,6 @@ namespace freakingpig.controllers
         {
             stamina = Mathf.Clamp(stamina - (staminaDecPerFrame * Time.deltaTime), 0.0f, maxStamina);
             staminaRegenTimer = 0;
-            Instantiate(runParticle, transform.position, transform.rotation);
         }
 
         void RegenStamina()
