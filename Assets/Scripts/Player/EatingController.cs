@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using freakingpig.gameplay;
 using System;
+using MyBox;
+using freakingpig.controllers;
 
 namespace freakingpig
 {
@@ -12,6 +14,7 @@ namespace freakingpig
         public Spawner spawner;
         private readonly Dictionary<PlantType, Buff> buffs = new(7);
         public ParticleSystem eatParticle;
+        [SerializeField, AutoProperty] private MovementController controller;
 
         private void Start()
         {
@@ -61,6 +64,7 @@ namespace freakingpig
                 case PlantType.Carrot:
                     return 5;
                 case PlantType.Beet:
+                    controller.SetMaxStamina(150);
                     return 8;
                 case PlantType.Onion:
                     return 3;
@@ -84,6 +88,7 @@ namespace freakingpig
                 case PlantType.Carrot:
                     break;
                 case PlantType.Beet:
+                    controller.SetMaxStamina(50);
                     break;
                 case PlantType.Onion:
                     break;
