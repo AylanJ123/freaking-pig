@@ -332,6 +332,18 @@ PrefabInstance:
       propertyPath: searchArea
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 3960085783729107657, guid: dbe4f477a335e4b4699e74cc3c7eb20c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5824784
+      objectReference: {fileID: 0}
+    - target: {fileID: 3960085783729107657, guid: dbe4f477a335e4b4699e74cc3c7eb20c, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1501789
+      objectReference: {fileID: 0}
+    - target: {fileID: 3960085783729107657, guid: dbe4f477a335e4b4699e74cc3c7eb20c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.70008945
+      objectReference: {fileID: 0}
     - target: {fileID: 4481104395449460846, guid: dbe4f477a335e4b4699e74cc3c7eb20c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1972,15 +1984,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1256472671811678285, guid: e28783b08dde46d4cb770d7cd3025fda, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.4677821
+      value: 0.46666667
       objectReference: {fileID: 0}
     - target: {fileID: 1256472671811678285, guid: e28783b08dde46d4cb770d7cd3025fda, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.8490566
+      value: 0.8509804
       objectReference: {fileID: 0}
     - target: {fileID: 1256472671811678285, guid: e28783b08dde46d4cb770d7cd3025fda, type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.5668842
+      value: 0.6627451
       objectReference: {fileID: 0}
     - target: {fileID: 1256472671811678286, guid: e28783b08dde46d4cb770d7cd3025fda, type: 3}
       propertyPath: m_RootOrder
