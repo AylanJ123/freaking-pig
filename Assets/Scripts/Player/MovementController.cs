@@ -15,7 +15,7 @@ namespace freakingpig.controllers
 
         private readonly float staminaIncPerFrame = 35;
         private readonly float staminaDecPerFrame = 20;
-        private readonly float maxStamina = 50;
+        private float maxStamina = 50;
         private readonly float staminaRegenDelayTime = 3;
         private float staminaRegenTimer = 0;
 
@@ -24,6 +24,12 @@ namespace freakingpig.controllers
         private bool isRunning;
         public ParticleSystem runParticle;
 
+        public void SetMaxStamina(float stamina)
+        {
+            if (maxStamina < stamina) this.stamina = stamina;
+            maxStamina = stamina;
+            if (this.stamina > maxStamina) this.stamina = maxStamina;
+        }
 
         private void Update()
         {

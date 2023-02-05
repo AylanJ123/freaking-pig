@@ -70,13 +70,11 @@ namespace freakingpig
             {
                 LookForPath();
                 if ((marta.position - transform.position).magnitude > 1) return;
-                Debug.Log("Looking at Marta");
                 diff = marta.position - transform.position;
             }
             diff.Normalize();
             float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new(0, 0, Mathf.LerpAngle(transform.eulerAngles.z, rotZ - 90, .2f));
-
             animator.SetBool("running", (velocity != Vector2.zero));
         }
     }
