@@ -1956,6 +1956,22 @@ PrefabInstance:
       propertyPath: root
       value: 
       objectReference: {fileID: 461388845}
+    - target: {fileID: 5025982918405675446, guid: 505b04fc64179e8428f999d5cd050f27, type: 3}
+      propertyPath: generation.Array.data[1].chances
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5025982918405675446, guid: 505b04fc64179e8428f999d5cd050f27, type: 3}
+      propertyPath: generation.Array.data[2].chances
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5025982918405675446, guid: 505b04fc64179e8428f999d5cd050f27, type: 3}
+      propertyPath: generation.Array.data[3].chances
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5025982918405675446, guid: 505b04fc64179e8428f999d5cd050f27, type: 3}
+      propertyPath: generation.Array.data[5].chances
+      value: 0.03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 505b04fc64179e8428f999d5cd050f27, type: 3}
 --- !u!1 &7692527347776239131 stripped
