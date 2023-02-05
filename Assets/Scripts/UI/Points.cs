@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using MyBox;
+using freakingpig.gameplay;
 
 namespace freakingpig
 {
@@ -9,9 +11,10 @@ namespace freakingpig
     {
         public TextMeshProUGUI text;
 
-        public void ChangeScore(int score)
+        private void FixedUpdate()
         {
-            text.text = score.ToString();
+            text.text = FieldCreator.Instance.FieldCount.ToString();
         }
+
     }
 }

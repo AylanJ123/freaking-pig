@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using freakingpig.gameplay;
 
 namespace freakingpig
 {
-    public class PhaseRule : MonoBehaviour
+    [Serializable]
+    public class PhaseRule
     {
         public float perc;
         public GameObject[] awakeables;
@@ -13,15 +16,14 @@ namespace freakingpig
     public class Spawner : MonoBehaviour
     {
         [SerializeField] private int counter = 0;
-        [SerializeField] private float expectedPercent = 1;
         [SerializeField] private PhaseRule[] rules = {};
         
-        void Eat()
+        public void Eat()
         {
             counter++;
             foreach (PhaseRule rule in rules)
             {
-                if (rule.perc >= counter / expectedPercent)
+                if (rule.perc >= counter / FieldCreator.Instance.FieldCount)
                 {
                     foreach (GameObject item in rule.awakeables)
                     {

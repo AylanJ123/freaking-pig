@@ -9,6 +9,7 @@ namespace freakingpig
     public class EatingController : MonoBehaviour
     {
         public Collider2D col;
+        public Spawner spawner;
         private readonly Dictionary<PlantType, Buff> buffs = new(7);
 
         private void Start()
@@ -40,6 +41,8 @@ namespace freakingpig
 
         void Eat(PlantType root)
         {
+            spawner.Eat();
+            FieldCreator.Instance.FieldCount--;
             float time = WearBuffOn(root);
             if (time == 0) return;
             buffs[root].wornOffTime = time + Time.time;

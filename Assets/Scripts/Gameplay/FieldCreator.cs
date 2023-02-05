@@ -11,6 +11,8 @@ namespace freakingpig.gameplay
     public class FieldCreator : MonoBehaviour
     {
 
+        public static FieldCreator Instance { get; private set; }
+
         [SerializeField, InitializationField] private int sizeX;
         [SerializeField, InitializationField] private int sizeY;
         [SerializeField, InitializationField] private int rows;
@@ -18,10 +20,11 @@ namespace freakingpig.gameplay
         [SerializeField, InitializationField] private List<PlantGeneration> generation;
         [SerializeField, InitializationField] private Transform root;
         private Pool plantsPooler;
-        public int FieldCount { get; private set; }
+        public int FieldCount { get; set; }
 
         private void Start()
         {
+            Instance = this;
             if (!Application.isPlaying) return;
             PlantRandomManager plantRandom = new(generation, FieldCount = (sizeX - sizeX % rows) * (sizeY - sizeY % columns));
             plantsPooler = PoolingManager.Instance["Plants"];
