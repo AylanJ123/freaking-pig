@@ -22,7 +22,7 @@ namespace freakingpig.gameplay
         private Pool plantsPooler;
         public int FieldCount { get; set; }
 
-        private void Start()
+        private void Awake()
         {
             Instance = this;
             if (!Application.isPlaying) return;
