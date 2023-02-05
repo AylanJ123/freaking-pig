@@ -107,13 +107,13 @@ MonoBehaviour:
     type: 2
   - chances: 0.1
     type: 4
-  - chances: 0.005
+  - chances: 0.01
     type: 8
-  - chances: 0.005
+  - chances: 0.01
     type: 16
   - chances: 0.05
     type: 32
-  - chances: 0.005
+  - chances: 0.01
     type: 64
   root: {fileID: 0}
 --- !u!114 &872869276993224665
