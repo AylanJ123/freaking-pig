@@ -36,6 +36,11 @@ namespace freakingpig.controllers
             this.speed = speed;
         }
 
+        private void Start()
+        {
+            runParticle = transform.GetChild(2).GetComponent<ParticleSystem>();
+        }
+
         private void Update()
         {
             velocity = new(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));

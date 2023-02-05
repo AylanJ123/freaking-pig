@@ -1,8 +1,11 @@
+using freakingpig.gameplay;
+using freakingpig.holders;
 using MyBox;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace freakingpig
 {
@@ -35,7 +38,13 @@ namespace freakingpig
 
         public void Die()
         {
-            //estaaa morrtoooooo
+            Transitions.Transition(1, 0, () =>
+            {
+                foreach (Plant plant in FindObjectsOfType<Plant>()) plant.PoolItself();
+                SceneManager.LoadScene("LooseMenu", LoadSceneMode.Single);
+                SPlayer.SwitchTrack(SoundHolder.Instance.gameStart, .3f, .2f);
+            }
+            );
             animator.SetTrigger("die");
         }
 
