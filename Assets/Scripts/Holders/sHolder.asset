@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseHover: {fileID: 8300000, guid: 772201343d8fa0943a17c0e7fd4d81f1, type: 3}
   mouseClick: {fileID: 8300000, guid: cef5a5ffe8bdf9f42aabb2354be78455, type: 3}
-  introSound: {fileID: 0}
-  gameStart: {fileID: 0}
+  introSound: {fileID: 8300000, guid: cef5a5ffe8bdf9f42aabb2354be78455, type: 3}
+  gameStart: {fileID: 8300000, guid: ecfaf4ba3ca3b6e48ab2d84b7e7ed6b7, type: 3}
+  gameMid: {fileID: 0}
+  gameGameEnd: {fileID: 0}
   mainMenuMusic: {fileID: 8300000, guid: e1002a57dfe1dd64c8d36f9a4aaa9b38, type: 3}
+  eat1: {fileID: 8300000, guid: 8a28b6d2fc0679b4d9cce136c5bd5c27, type: 3}
+  eat2: {fileID: 8300000, guid: 2042c988e52a4d44cb6799718ae4e3b5, type: 3}
+  eat3: {fileID: 8300000, guid: a0fa335bedffe4b448a3002080d482f7, type: 3}
