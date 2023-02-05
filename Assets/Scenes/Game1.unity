@@ -827,6 +827,38 @@ PrefabInstance:
       propertyPath: HealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1475597354}
+    - target: {fileID: 202980289019522352, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
+      propertyPath: ShapeModule.type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 202980289019522352, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.b
+      value: 0.107653946
+      objectReference: {fileID: 0}
+    - target: {fileID: 202980289019522352, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.g
+      value: 0.509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 202980289019522352, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.r
+      value: 0.38338536
+      objectReference: {fileID: 0}
+    - target: {fileID: 202980289019522352, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key2.b
+      value: 0.07817725
+      objectReference: {fileID: 0}
+    - target: {fileID: 202980289019522352, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key2.g
+      value: 0.5754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 202980289019522352, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key2.r
+      value: 0.5251835
+      objectReference: {fileID: 0}
+    - target: {fileID: 202980289019522352, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2334129576624537914, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
       propertyPath: spawner
       value: 

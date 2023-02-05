@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 2021877092692938531}
   spawner: {fileID: 0}
-  eatParticle: {fileID: 0}
+  eatParticle: {fileID: 5331906824412034508}
   controller: {fileID: 3471628768890001253}
   health: {fileID: 1582932303}
 --- !u!114 &1582932303
@@ -329,6 +329,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32d8eed4fa86d334fa46457454fc25a1, type: 3}
+--- !u!198 &5331906824412034508 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8363828386692438616, guid: 32d8eed4fa86d334fa46457454fc25a1, type: 3}
+  m_PrefabInstance: {fileID: 4462210279449489300}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5331906824412034511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8363828386692438619, guid: 32d8eed4fa86d334fa46457454fc25a1, type: 3}
