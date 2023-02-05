@@ -236,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 2021877092692938531}
   spawner: {fileID: 0}
+  particle: {fileID: 8363828386692438566, guid: 32d8eed4fa86d334fa46457454fc25a1, type: 3}
 --- !u!114 &1582932303
 MonoBehaviour:
   m_ObjectHideFlags: 0
