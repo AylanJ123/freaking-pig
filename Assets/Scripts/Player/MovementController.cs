@@ -63,17 +63,16 @@ namespace freakingpig.controllers
             diff.Normalize();
             float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new(0, 0, Mathf.LerpAngle(transform.eulerAngles.z, rotZ - 90, .2f));
-
-            if (!runParticle.isEmitting)
-            {
-                runParticle.Play();
-            }
         }
 
         void Run()
         {
             stamina = Mathf.Clamp(stamina - (staminaDecPerFrame * Time.deltaTime), 0.0f, maxStamina);
             staminaRegenTimer = 0;
+            if (!runParticle.isEmitting)
+            {
+                runParticle.Play();
+            }
         }
 
         void RegenStamina()
