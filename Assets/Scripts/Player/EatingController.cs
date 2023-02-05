@@ -50,7 +50,7 @@ namespace freakingpig
         void Eat(PlantType root)
         {
             float rand = UnityEngine.Random.value;
-            SPlayer.PlaySFX(rand < .33f ? SoundHolder.Instance.eat1 : rand < .66f ? SoundHolder.Instance.eat2 : SoundHolder.Instance.eat3, .3f);
+            SPlayer.PlaySFX(rand < .33f ? SoundHolder.Instance.eat1 : rand < .66f ? SoundHolder.Instance.eat2 : SoundHolder.Instance.eat3, .1f);
             eatParticle.Play();
             spawner.Eat();
             FieldCreator.Instance.FieldCount--;

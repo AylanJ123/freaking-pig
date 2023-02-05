@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4071319050219982826, guid: 14fdee763c8cd0e4a8e548b7731f635c, type: 3}
+      propertyPath: searchArea
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8357509635328115457, guid: 14fdee763c8cd0e4a8e548b7731f635c, type: 3}
       propertyPath: m_Name
       value: Wife
@@ -224,18 +228,22 @@ MonoBehaviour:
     awakeables:
     - {fileID: 7692527347776239131}
     music: {fileID: 8300000, guid: 6b17e7509fdb68844966f4156af8afb0, type: 3}
+    voice: {fileID: 8300000, guid: 5d44dee5e160e4b48a9c16ad6e6b1342, type: 3}
   - perc: 0.2
     awakeables:
     - {fileID: 1512278672}
     music: {fileID: 8300000, guid: 6b17e7509fdb68844966f4156af8afb0, type: 3}
+    voice: {fileID: 8300000, guid: 730e709551872b344bea63b6b69049c0, type: 3}
   - perc: 0.5
     awakeables:
     - {fileID: 148863279}
     music: {fileID: 8300000, guid: 6b17e7509fdb68844966f4156af8afb0, type: 3}
+    voice: {fileID: 8300000, guid: d9d3c27d34abd63489e4d57eeda8bcd3, type: 3}
   - perc: 0.8
     awakeables:
     - {fileID: 232565187}
     music: {fileID: 8300000, guid: a36bc2a3ea0036b42a5356b39b1ad25a, type: 3}
+    voice: {fileID: 8300000, guid: e607e7391bf54424db1596ed694430d6, type: 3}
 --- !u!4 &150623788
 Transform:
   m_ObjectHideFlags: 0
@@ -316,6 +324,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 802238535143711008, guid: dbe4f477a335e4b4699e74cc3c7eb20c, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 802238535143711008, guid: dbe4f477a335e4b4699e74cc3c7eb20c, type: 3}
+      propertyPath: searchArea
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4481104395449460846, guid: dbe4f477a335e4b4699e74cc3c7eb20c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1414,6 +1430,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1393979521638315897, guid: 6cd6336af5c58044096bf3c6c15893ba, type: 3}
+      propertyPath: attackTime
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2556581012355670820, guid: 6cd6336af5c58044096bf3c6c15893ba, type: 3}
+      propertyPath: searchArea
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9000782940688475471, guid: 6cd6336af5c58044096bf3c6c15893ba, type: 3}
       propertyPath: m_Name
       value: Son
@@ -1946,6 +1970,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 1256472671811678285, guid: e28783b08dde46d4cb770d7cd3025fda, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.4677821
+      objectReference: {fileID: 0}
+    - target: {fileID: 1256472671811678285, guid: e28783b08dde46d4cb770d7cd3025fda, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 1256472671811678285, guid: e28783b08dde46d4cb770d7cd3025fda, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.5668842
+      objectReference: {fileID: 0}
     - target: {fileID: 1256472671811678286, guid: e28783b08dde46d4cb770d7cd3025fda, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2042,6 +2078,10 @@ PrefabInstance:
     - target: {fileID: 8249265629936205576, guid: ddbcb63b8db42094e8ac353c2831de8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8249265629936205581, guid: ddbcb63b8db42094e8ac353c2831de8b, type: 3}
+      propertyPath: searchArea
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8249265629936205588, guid: ddbcb63b8db42094e8ac353c2831de8b, type: 3}
       propertyPath: m_Name
