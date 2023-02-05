@@ -15,6 +15,7 @@ namespace freakingpig
         private readonly Dictionary<PlantType, Buff> buffs = new(7);
         public ParticleSystem eatParticle;
         [SerializeField, AutoProperty] private MovementController controller;
+        [SerializeField, AutoProperty] private Health health;
 
         private void Start()
         {
@@ -67,15 +68,34 @@ namespace freakingpig
                     controller.SetMaxStamina(150);
                     return 8;
                 case PlantType.Onion:
+                    Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 2, 1 << 8);
+                    foreach (Collider2D collider in cols)
+                        if (collider.TryGetComponent(out EnemyAI ai))
+                            ai.LockDown(5);
                     return 3;
                 case PlantType.Garlic:
+                    StartCoroutine(GarlicBreath());
                     return 4;
                 case PlantType.Radish:
+                    health.Heal(1);
                     return 0;
                 case PlantType.Ginger:
+                    controller.SetSpeed(15);
                     return 4;
                 default:
                     throw new IndexOutOfRangeException("There are not enough enums in this switch");
+            }
+        }
+
+        IEnumerator GarlicBreath()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                yield return new WaitForSeconds(1);
+                Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 2, 1 << 8);
+                foreach (Collider2D collider in cols)
+                    if (collider.TryGetComponent(out EnemyAI ai))
+                        ai.LockDown(1);
             }
         }
 
@@ -97,6 +117,7 @@ namespace freakingpig
                 case PlantType.Radish:
                     break;
                 case PlantType.Ginger:
+                    controller.SetSpeed(10);
                     break;
                 default:
                     throw new IndexOutOfRangeException("There are not enough enums in this switch");

@@ -765,10 +765,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7328685072900453410, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
 --- !u!4 &1009872971 stripped
@@ -1898,10 +1894,6 @@ PrefabInstance:
     - target: {fileID: 8249265629936205588, guid: ddbcb63b8db42094e8ac353c2831de8b, type: 3}
       propertyPath: m_Name
       value: Dog
-      objectReference: {fileID: 0}
-    - target: {fileID: 8249265629936205588, guid: ddbcb63b8db42094e8ac353c2831de8b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbcb63b8db42094e8ac353c2831de8b, type: 3}

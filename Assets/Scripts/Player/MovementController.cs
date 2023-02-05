@@ -31,6 +31,11 @@ namespace freakingpig.controllers
             if (this.stamina > maxStamina) this.stamina = maxStamina;
         }
 
+        public void SetSpeed(float speed)
+        {
+            this.speed = speed;
+        }
+
         private void Update()
         {
             velocity = new(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
