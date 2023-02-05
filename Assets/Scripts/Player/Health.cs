@@ -11,10 +11,12 @@ namespace freakingpig
         [SerializeField, InitializationField] private float maxHealth = 10;
         [SerializeField, ReadOnly] private float health;
         public UnityEvent<float> HealthChanged;
+        public Animator animator;
 
         private void Start()
         {
             health = maxHealth;
+            animator = GetComponent<Animator>();
         }
 
         public void TakeDamage(float damage)
@@ -34,6 +36,7 @@ namespace freakingpig
         public void Die()
         {
             //estaaa morrtoooooo
+            animator.SetTrigger("die");
         }
 
         public void Heal(int heal)
