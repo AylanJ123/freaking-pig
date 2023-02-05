@@ -6,6 +6,7 @@ using System;
 using MyBox;
 using freakingpig.controllers;
 using freakingpig.holders;
+using UnityEngine.SceneManagement;
 
 namespace freakingpig
 {
@@ -54,6 +55,16 @@ namespace freakingpig
             eatParticle.Play();
             spawner.Eat();
             FieldCreator.Instance.FieldCount--;
+            if (FieldCreator.Instance.FieldCount <= 0)
+            {
+                Transitions.Transition(1, 0, () =>
+                {
+                    foreach (Plant plant in FindObjectsOfType<Plant>()) plant.PoolItself();
+                    SceneManager.LoadScene("WinMenu", LoadSceneMode.Single);
+                    SPlayer.SwitchTrack(SoundHolder.Instance.gameStart, .3f, .2f);
+                }
+            );
+            }
             CropsEaten++;
             float time = WearBuffOn(root);
             if (time == 0) return;
