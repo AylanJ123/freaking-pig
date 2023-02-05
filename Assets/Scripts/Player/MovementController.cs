@@ -69,10 +69,7 @@ namespace freakingpig.controllers
         {
             stamina = Mathf.Clamp(stamina - (staminaDecPerFrame * Time.deltaTime), 0.0f, maxStamina);
             staminaRegenTimer = 0;
-            if (!runParticle.isEmitting)
-            {
-                runParticle.Play();
-            }
+            runParticle.Play();
         }
 
         void RegenStamina()

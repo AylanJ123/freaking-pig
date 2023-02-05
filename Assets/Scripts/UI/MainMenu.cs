@@ -16,7 +16,7 @@ namespace freakingpig
         {
             Transitions.Transition(.5f, 0, () =>
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+                SceneManager.LoadScene("Game1", LoadSceneMode.Single);
                 SPlayer.SwitchTrack(SoundHolder.Instance.gameStart, .3f, .2f);
             }
             );

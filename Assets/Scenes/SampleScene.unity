@@ -1283,6 +1283,8 @@ MonoBehaviour:
   col: {fileID: 2142774790}
   spawner: {fileID: 0}
   eatParticle: {fileID: 0}
+  controller: {fileID: 0}
+  health: {fileID: 0}
 --- !u!1001 &3471628769022385921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1300,11 +1302,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3471628768890001255, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49
+      value: 0.795
       objectReference: {fileID: 0}
     - target: {fileID: 3471628768890001255, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.33
+      value: 0.021
       objectReference: {fileID: 0}
     - target: {fileID: 3471628768890001255, guid: 5dde3d84f62d31647b0c4876754de943, type: 3}
       propertyPath: m_LocalPosition.z
