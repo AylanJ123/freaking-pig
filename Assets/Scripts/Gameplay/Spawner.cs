@@ -33,8 +33,8 @@ namespace freakingpig
                 if (rule.perc < counter / (float) cachedCount && !rule.awakeables[0].activeSelf)
                 {
                     rule.awakeables[0].SetActive(true);
-                    SPlayer.SwitchTrack(rule.music, .15f, .1f, 1);
-                    SPlayer.PlaySFX(rule.voice, .35f);
+                    SPlayer.SwitchTrack(rule.music, .01f, .1f, 1);
+                    SPlayer.PlaySFX(rule.voice, .6f);
                     break;
                 }
             }

@@ -64,7 +64,7 @@ namespace freakingpig
         private void FixedUpdate()
         {
             rb.velocity = reachedEnd || lockDownEnd > Time.time ? Vector2.zero : velocity * speed;
-            src.volume = rb.velocity == Vector2.zero ? 0 : .4f;
+            src.volume = rb.velocity == Vector2.zero ? 0 : .75f;
             Vector3 diff = velocity;
             if (reachedEnd || lockDownEnd > Time.time)
             {
