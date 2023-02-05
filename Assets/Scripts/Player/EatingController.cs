@@ -11,11 +11,12 @@ namespace freakingpig
         public Collider2D col;
         public Spawner spawner;
         private readonly Dictionary<PlantType, Buff> buffs = new(7);
-        public GameObject eatParticle;
+        public ParticleSystem eatParticle;
 
         private void Start()
         {
             foreach (PlantType type in Enum.GetValues(typeof(PlantType))) buffs.Add(type, new Buff());
+            eatParticle = transform.GetChild(1).GetComponent<ParticleSystem>();
         }
 
         void Update()
@@ -42,7 +43,7 @@ namespace freakingpig
 
         void Eat(PlantType root)
         {
-            Instantiate(eatParticle, transform.position, transform.rotation);
+            eatParticle.Play();
             spawner.Eat();
             FieldCreator.Instance.FieldCount--;
             float time = WearBuffOn(root);
