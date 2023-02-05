@@ -11,7 +11,7 @@ namespace freakingpig
         public Collider2D col;
         public Spawner spawner;
         private readonly Dictionary<PlantType, Buff> buffs = new(7);
-        public GameObject particle;
+        public GameObject eatParticle;
 
         private void Start()
         {
@@ -42,7 +42,7 @@ namespace freakingpig
 
         void Eat(PlantType root)
         {
-            Instantiate(particle, transform.position, transform.rotation);
+            Instantiate(eatParticle, transform.position, transform.rotation);
             spawner.Eat();
             FieldCreator.Instance.FieldCount--;
             float time = WearBuffOn(root);

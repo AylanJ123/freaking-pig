@@ -22,6 +22,8 @@ namespace freakingpig.controllers
         private Vector2 velocity = new(0, 1);
         private bool rotate;
         private bool isRunning;
+        public GameObject runParticle;
+
 
         private void Update()
         {
@@ -53,6 +55,7 @@ namespace freakingpig.controllers
         {
             stamina = Mathf.Clamp(stamina - (staminaDecPerFrame * Time.deltaTime), 0.0f, maxStamina);
             staminaRegenTimer = 0;
+            Instantiate(runParticle, transform.position, transform.rotation);
         }
 
         void RegenStamina()
