@@ -10,10 +10,11 @@ namespace freakingpig
     public class Points : MonoBehaviour
     {
         public TextMeshProUGUI text;
+        private int MaxCrops = 180;
 
         private void FixedUpdate()
         {
-            text.text = FieldCreator.Instance.FieldCount.ToString();
+            text.text = $"{EatingController.CropsEaten}/{MaxCrops}";
         }
 
     }
