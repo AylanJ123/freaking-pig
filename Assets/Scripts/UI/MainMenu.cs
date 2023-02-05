@@ -11,6 +11,7 @@ namespace freakingpig
         public GameObject mainMenu;
         public GameObject settings;
         public GameObject credits;
+        public GameObject gameInstructions;
         public void Play()
         {
             Transitions.Transition(.5f, 0, () =>
@@ -20,23 +21,33 @@ namespace freakingpig
             }
             );
         }
+        public void OpenGameInstructions()
+        {
+            mainMenu.SetActive(false);
+            credits.SetActive(false);
+            settings.SetActive(false);
+            gameInstructions.SetActive(true);
+        }
 
         public void OpenSettings(){
             mainMenu.SetActive(false);
             credits.SetActive(false);
             settings.SetActive(true);
+            gameInstructions.SetActive(false);
         }
 
         public void ReturnMainMenu(){
             mainMenu.SetActive(true);
             settings.SetActive(false);
             credits.SetActive(false);
+            gameInstructions.SetActive(false);
         }
 
         public void OpenCredits(){
             settings.SetActive(false);
             mainMenu.SetActive(false);
             credits.SetActive(true);
+            gameInstructions.SetActive(false);
         }
 
         public void Exit(){
