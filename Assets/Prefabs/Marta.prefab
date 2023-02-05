@@ -185,7 +185,7 @@ MonoBehaviour:
   rb: {fileID: 3471628768890001250}
   animator: {fileID: 2711934613567000487}
   stamina: 100
-  runParticle: {fileID: 4635975165394020452, guid: 457ddf2452e024745849e892af788d6c, type: 3}
+  runParticle: {fileID: 4635975165394020454, guid: 457ddf2452e024745849e892af788d6c, type: 3}
 --- !u!50 &3471628768890001250
 Rigidbody2D:
   serializedVersion: 4
