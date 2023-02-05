@@ -30,10 +30,7 @@ namespace freakingpig.controllers
             velocity = new(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             rotate = velocity != Vector2.zero;
             animator.SetBool("running", rotate);
-            if (rotate)
-            {
-                runParticle.Play();
-            }
+
 
             isRunning = Input.GetKey(KeyCode.LeftShift) && stamina > 0;
 
@@ -55,6 +52,11 @@ namespace freakingpig.controllers
             diff.Normalize();
             float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new(0, 0, Mathf.LerpAngle(transform.eulerAngles.z, rotZ - 90, .2f));
+
+            if (!runParticle.isEmitting)
+            {
+                runParticle.Play();
+            }
         }
 
         void Run()
