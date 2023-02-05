@@ -14,6 +14,7 @@ namespace freakingpig
         public Spawner spawner;
         private readonly Dictionary<PlantType, Buff> buffs = new(7);
         public ParticleSystem eatParticle;
+        public static int CropsEaten = 0;
         [SerializeField, AutoProperty] private MovementController controller;
         [SerializeField, AutoProperty] private Health health;
 
@@ -50,6 +51,7 @@ namespace freakingpig
             eatParticle.Play();
             spawner.Eat();
             FieldCreator.Instance.FieldCount--;
+            CropsEaten++;
             float time = WearBuffOn(root);
             if (time == 0) return;
             buffs[root].wornOffTime = time + Time.time;
