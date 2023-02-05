@@ -26,7 +26,9 @@ namespace freakingpig.gameplay
         {
             Instance = this;
             if (!Application.isPlaying) return;
-            PlantRandomManager plantRandom = new(generation, FieldCount = (sizeX - sizeX % rows) * (sizeY - sizeY % columns));
+            int amount = (sizeX - (sizeX / rows - 1 - (sizeX / rows - 1) / 4)) * (sizeY - (sizeY / columns - 1 - (sizeY / columns - 1) / 4));
+            FieldCount = amount;
+            PlantRandomManager plantRandom = new(generation, FieldCount);
             plantsPooler = PoolingManager.Instance["Plants"];
             Vector3 anchor = transform.position - new Vector3(sizeX / 2f, sizeY / 2f, 0);
             for (int i = 1; i <= sizeX; i++)
