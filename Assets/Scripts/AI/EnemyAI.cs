@@ -19,10 +19,14 @@ namespace freakingpig
         private Vector2 velocity;
         private bool reachedEnd;
         private float lockDownEnd;
+
+        private Animator animator;
         void Start()
         {
             marta = GameObject.FindGameObjectWithTag("Player").transform;
             InvokeRepeating(nameof(LookForPath), 0, .25f);
+
+            animator = GetComponent<Animator>();
         }
 
         public void LockDown(float time)
@@ -72,6 +76,8 @@ namespace freakingpig
             diff.Normalize();
             float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new(0, 0, Mathf.LerpAngle(transform.eulerAngles.z, rotZ - 90, .2f));
+
+            animator.SetBool("running", (velocity != Vector2.zero));
         }
     }
 }
