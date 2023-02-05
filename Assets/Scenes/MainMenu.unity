@@ -1085,8 +1085,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Developed for Global Game Jam UCreativa + Frame3 by: \n\tKeiko Camacho
     Carrera - Art, Design.\n\tJose Pablo Mayorga Sol\xEDs - Programming.\n\tAylan
-    Miranda Blanco - Game Design, Programming.\n\tJose Daniel Murillo Gonz\xE1lez
-    - Audio, Programming.\n\tGabriel Ulate Moreira - Art, Programming.\n\t"
+    Miranda Blanco - Game Design, Programming.\n\tJose Daniel Murillo Gonzalez -
+    Audio, Programming.\n\tGabriel Ulate Moreira - Art, Programming.\n\t"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8365d36478ddbc43aa5df82766fe21c, type: 2}
   m_sharedMaterial: {fileID: -3149446840082756817, guid: c8365d36478ddbc43aa5df82766fe21c, type: 2}
